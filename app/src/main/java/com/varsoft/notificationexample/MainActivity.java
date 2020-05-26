@@ -1,9 +1,5 @@
 package com.varsoft.notificationexample;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-
-import android.Manifest;
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -14,10 +10,11 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import java.util.Calendar;
 
@@ -25,9 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button
             withClick,
-            withTime,
-            withClose;
-    private TextView textView;
+            withTime;
+
     private NotificationCompat.Builder builder;
 
     @Override
@@ -37,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
         withClick = findViewById(R.id.withClick);
         withTime = findViewById(R.id.withTime);
-        withClose = findViewById(R.id.withClose);
-        textView = findViewById(R.id.textView);
 
 
         withClick.setOnClickListener(new View.OnClickListener() {
@@ -54,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
                 withTimeNotification();
             }
         });
-
-
     }
 
     public void withClickNotification() {
